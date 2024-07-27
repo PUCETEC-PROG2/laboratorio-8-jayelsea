@@ -1,0 +1,6 @@
+Comando para agregar una nueva dependecia a mi "requierements.txt" 
+
+pip3 freeze > requierements.txt
+
+cada vez que necesitamos una nueva dependecia para el proyecto, debemos actualizar nuestro archivo "requierements.txt"
+de lo contrario si otro programador intenta usar el codigo, no lo va a poder hacer ya que le faltarian

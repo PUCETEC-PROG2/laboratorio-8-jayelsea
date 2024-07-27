@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block title %}Mi Pokedex{% endblock title %}
+{% block content %}
+    <p class="p-2">Hola, este es tu primer sitio en Django</p>
+    <!-- Con este enlace redirigimos a nuestro formulario de agregar pokemones -->
+    <a href="{% url "pokedex:add_pokemon" %}" class="btn btn-primary">Crear pokemon</a>
+    <div class="card-group">
+        {%for pokemon in pokemons%}
+            <div class="card">
+                <img src="{{pokemon.picture.url}}" alt="">
+                <div class="card-body">
+                    <h5 class="card-title">{{ pokemon }}</h5>
+                    <p class="card-text">Entrenador: {{ pokemon.trainer }}.</p>
+                    <p class="card-text">Peso: {{ pokemon.weight }} kg.</p>
+                    <a href="pokemon/{{ pokemon.id }}" class="btn btn-primary">
+                        <i class="fa-sold fa-eye"></i>
+                    </a>
+                    <a href="edit_pokemon/{{ pokemon.id }}" class="btn btn-primary">
+                        <i class="fa-sold fa-pencil"></i>
+                    </a>
+                    <a href="delete_pokemon/{{ pokemon.id }}" class="btn btn-danger">
+                        <i class="fa-sold fa-trash"></i>
+                    </a>
+
+
+                </div>
+            </div>
+        {%endfor%}
+    </div>
+
+
+{% endblock content %}
