@@ -6,13 +6,13 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('pokedex', '0001_initial'),
+        ('pokedex', '0003_alter_pokemon_type'),
     ]
 
     operations = [
         migrations.AlterField(
             model_name='pokemon',
             name='type',
-            field=models.CharField(choices=[('L', 'Lagartija'), ('P', 'Planta'), ('F', 'Fuego'), ('T', 'Tierra'), ('A', 'Agua'), ('E', 'Eléctrico')], max_length=30),
+            field=models.CharField(choices=[('E', 'Eléctrico'), ('P', 'Planta'), ('F', 'Fuego'), ('T', 'Tierra'), ('A', 'Agua'), ('L', 'Lagartija')], max_length=30),
         ),
     ]
